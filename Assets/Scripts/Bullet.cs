@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     private Rigidbody _rigidbody;
-    
+   
 
     private void Start()
     {
@@ -17,7 +17,7 @@ public class Bullet : MonoBehaviour
         
         if (other.gameObject.CompareTag("Classmate"))
         {
-            
+           
             _rigidbody.useGravity = true;
             
         }
