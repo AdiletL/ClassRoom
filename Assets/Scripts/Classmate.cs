@@ -2,27 +2,29 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Number : MonoBehaviour
+public class Classmate : MonoBehaviour
 {
-
-   [HideInInspector]  public bool _number = false;
     private Animator _anim;
 
-    public bool _numb = false;
+    
 
-    private BoxCollider _Box;
 
     private void Start()
     {
-        _Box = GetComponent<BoxCollider>();
+        _anim = GetComponent<Animator>();
+      
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            _numb = true;
-            _Box.center = new Vector3(5, 5, 5);
+          
+          _anim.SetTrigger("Popadanie");
         }
+        
     }
+    
+    
 }

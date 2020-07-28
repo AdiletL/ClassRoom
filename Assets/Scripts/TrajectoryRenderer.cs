@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class TrajectoryRenderer : MonoBehaviour
 {
+
+   
     public LineRenderer lineRendererComponent;
-    
+
+    // Start is called before the first frame update
     void Start()
     {
         lineRendererComponent = GetComponent<LineRenderer>();
@@ -13,6 +16,8 @@ public class TrajectoryRenderer : MonoBehaviour
 
     public void ShowTrajectory(Vector3 origin, Vector3 speed)
     {
+       
+
         Vector3[] point = new Vector3[3];
         lineRendererComponent.positionCount = point.Length;
 
@@ -27,7 +32,11 @@ public class TrajectoryRenderer : MonoBehaviour
                 lineRendererComponent.positionCount = i;
                 break;
             }
+
         }
         lineRendererComponent.SetPositions(point);
     }
+
+
+
 }
