@@ -4,20 +4,13 @@ using UnityEngine;
 
 public class Number : MonoBehaviour
 {
-<<<<<<< HEAD
-
    [HideInInspector]  public bool _number = false;
-=======
-    public bool _number = false;
->>>>>>> parent of c04f0d6... Level3
     private Animator _anim;
-
-    public bool _numb = false;
-
     private BoxCollider _Box;
 
     private void Start()
     {
+        _anim = GetComponent<Animator>();
         _Box = GetComponent<BoxCollider>();
     }
 
@@ -25,7 +18,8 @@ public class Number : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            _numb = true;
+            _anim.SetTrigger("Popadanie");
+            _number = true;
             _Box.center = new Vector3(5, 5, 5);
         }
     }
