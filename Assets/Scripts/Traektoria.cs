@@ -5,20 +5,13 @@ using UnityEngine;
 
 public class Traektoria : MonoBehaviour
 {
-
-    public float SpeedRotate;
-    public float sped;
-    public float Power = 50;
-    private float hitdist = 0.0f;
-    private float counter;
-    public float interval;
-    public float Popadanieclass;
-    public float amount;
+    public float SpeedRotate, sped, interval, Power = 50;
+    private float hitdist, counter;
     
-
-    public Transform PosRay;
+   [HideInInspector] public float amount, Popadanieclass;
+    
+    public Transform PosRay,BulletPos;
     public GameObject Bullet;
-    public Transform BulletPos;
     public TrajectoryRenderer Trajectory;
     public Number[] Popadanie;
     public GameObject[] paper;
@@ -27,8 +20,7 @@ public class Traektoria : MonoBehaviour
      
    [HideInInspector] public Vector3 speed, mousPos;
 
-   
-    
+    public List<GameObject> paperDestroy = new List<GameObject>();
 
     private void Start()
     {
@@ -38,9 +30,9 @@ public class Traektoria : MonoBehaviour
 
     void Update()
     {
-  
         counter += Time.deltaTime;
-      
+        var x = paper[Random.Range(0,paper.Length)];
+        
         Plane playerPlane = new Plane(Vector3.up, transform.position);
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -53,15 +45,37 @@ public class Traektoria : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
 
             mousPos = targetPoint - transform.position;
-            if (Popadanieclass != 0.6f)
+            if (Popadanieclass != 0.6f  )
             {
-                if (Input.GetMouseButtonDown(0) && counter >= interval)
+                if (amount != 5)
+                {
+                if (Input.GetMouseButtonDown(0) )
                 {
                     interval = 0.9f;
                     _animator.SetTrigger("Zamah");
-
+                   
+            if (amount == 0)
+            {
+                Destroy(paper[0]);
+            }
+            if (amount == 1)
+            {
+                Destroy(paper[1]);
+            }
+            if (amount == 2)
+            {
+                Destroy(paper[2]);
+            }
+            if (amount == 3)
+            {
+                Destroy(paper[3]);
+            }
+            if (amount == 4)
+            {
+                Destroy(paper[4]);
+            }
                 }
-
+                
                 if (Input.GetMouseButton(0))
                 {
                     transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, SpeedRotate * Time.deltaTime);
@@ -75,17 +89,14 @@ public class Traektoria : MonoBehaviour
                     Power = 0;
                     speed = (targetPoint - transform.position) * Power;
                     Trajectory.ShowTrajectory(transform.position, speed);
+                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
                 }
                 if (Input.GetMouseButtonUp(0))
                 {
-
                     _animator.SetTrigger("Kidat");
-
-                    Mesto();
-
+                   
                 }
-
-            
+  
             var b = Popadanie[0];
             var q = Popadanie[1];
             var w = Popadanie[2];
@@ -101,6 +112,8 @@ public class Traektoria : MonoBehaviour
                         _animator.SetTrigger("Victory");
                     }
                 }
+                }
+                
             }
         }
     }
@@ -109,42 +122,18 @@ public class Traektoria : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             amount += 1;
-            if (amount == 1)
-            {
-            Destroy(paper[0]);
-            }
-            if (amount == 2)
-            {
-                Destroy(paper[1]);
-            }
-            if (amount == 3)
-            {
-                Destroy(paper[2]);
-            }
-            if (amount == 4)
-            {
-                Destroy(paper[3]);
-            }
-            if (amount == 5)
-            {
-                Destroy(paper[4]);
-            }
-
         }
     }
 
-    void Mesto() {        
-        transform.rotation = Quaternion.Lerp(transform.rotation,  Quaternion.Euler(0,90,0), 1); }
 
     public void Kidanie()
     {
         if (amount < 5)
         {
-GameObject s = Instantiate(Bullet, BulletPos.position, transform.rotation);
-                    s.GetComponent<Rigidbody>().velocity = mousPos * sped * Time.deltaTime;
-           
+           GameObject s = Instantiate(Bullet, BulletPos.position, transform.rotation);
+           s.GetComponent<Rigidbody>().AddForce(mousPos.normalized * sped, ForceMode.Impulse);
         }
-         }
+    }
 }
 
 
