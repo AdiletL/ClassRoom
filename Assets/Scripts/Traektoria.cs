@@ -49,54 +49,54 @@ public class Traektoria : MonoBehaviour
             {
                 if (amount != 5)
                 {
-                if (Input.GetMouseButtonDown(0) )
-                {
-                    interval = 0.9f;
-                    _animator.SetTrigger("Zamah");
-                   
-            if (amount == 0)
-            {
-                Destroy(paper[0]);
-            }
-            if (amount == 1)
-            {
-                Destroy(paper[1]);
-            }
-            if (amount == 2)
-            {
-                Destroy(paper[2]);
-            }
-            if (amount == 3)
-            {
-                Destroy(paper[3]);
-            }
-            if (amount == 4)
-            {
-                Destroy(paper[4]);
-            }
-                }
-                
-                if (Input.GetMouseButton(0))
-                {
-                    transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, SpeedRotate * Time.deltaTime);
+                    if (Input.GetMouseButtonDown(0))
+                    {
+                        interval = 0.9f;
+                        _animator.SetTrigger("Zamah");
 
-                    Power = 50;
-                    speed = (targetPoint - transform.position) * Power;
-                    Trajectory.ShowTrajectory(PosRay.position, speed);
+                        if (amount == 0)
+                        {
+                            Destroy(paper[0]);
+                        }
+                        if (amount == 1)
+                        {
+                            Destroy(paper[1]);
+                        }
+                        if (amount == 2)
+                        {
+                            Destroy(paper[2]);
+                        }
+                        if (amount == 3)
+                        {
+                            Destroy(paper[3]);
+                        }
+                        if (amount == 4)
+                        {
+                            Destroy(paper[4]);
+                        }
+                    }
+
+                    if (Input.GetMouseButton(0))
+                    {
+                        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, SpeedRotate * Time.deltaTime);
+
+                        Power = 50;
+                        speed = (targetPoint - transform.position) * Power;
+                        Trajectory.ShowTrajectory(PosRay.position, speed);
+                    }
+                    else
+                    {
+                        Power = 0;
+                        speed = (targetPoint - transform.position) * Power;
+                        Trajectory.ShowTrajectory(transform.position, speed);
+                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
+                    }
+                    if (Input.GetMouseButtonUp(0))
+                    {
+                        _animator.SetTrigger("Kidat");
+
+                    }
                 }
-                else
-                {
-                    Power = 0;
-                    speed = (targetPoint - transform.position) * Power;
-                    Trajectory.ShowTrajectory(transform.position, speed);
-                    transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
-                }
-                if (Input.GetMouseButtonUp(0))
-                {
-                    _animator.SetTrigger("Kidat");
-                   
-                }
-  
             var b = Popadanie[0];
             var q = Popadanie[1];
             var w = Popadanie[2];
@@ -112,7 +112,7 @@ public class Traektoria : MonoBehaviour
                         _animator.SetTrigger("Victory");
                     }
                 }
-                }
+                
                 
             }
         }

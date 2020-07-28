@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Number : MonoBehaviour
 {
-    public bool _number = false;
+   [HideInInspector]  public bool _number = false;
     private Animator _anim;
     private BoxCollider _Box;
 

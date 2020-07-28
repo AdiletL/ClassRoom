@@ -11050,32 +11050,13 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 288024281}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &311816977 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5575438418645345980, guid: 37a4135d5ed55284d8634d5e314c26a7,
-    type: 3}
-  m_PrefabInstance: {fileID: 937793651}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &311816982
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311816977}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c4a8c784cba48040bd5fe1ecc43e751, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _number: 0
 --- !u!114 &311816983 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 137210771504807645, guid: 37a4135d5ed55284d8634d5e314c26a7,
     type: 3}
   m_PrefabInstance: {fileID: 937793651}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 311816977}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9c4a8c784cba48040bd5fe1ecc43e751, type: 3}
@@ -22663,7 +22644,7 @@ PrefabInstance:
         type: 3}
       propertyPath: N
       value: 
-      objectReference: {fileID: 311816982}
+      objectReference: {fileID: 0}
     - target: {fileID: 5575438418645345980, guid: 37a4135d5ed55284d8634d5e314c26a7,
         type: 3}
       propertyPath: m_Name
@@ -32987,13 +32968,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SpeedRotate: 5
   sped: 350
-  Power: 50
   interval: 0.9
-  Popadanieclass: 0
+  Power: 50
   amount: 0
+  Popadanieclass: 0
   PosRay: {fileID: 40967480}
-  Bullet: {fileID: 3355093976647211821, guid: c5fcfde5765e24148a9eeb0777e9f21f, type: 3}
   BulletPos: {fileID: 1759292461}
+  Bullet: {fileID: 3355093976647211821, guid: c5fcfde5765e24148a9eeb0777e9f21f, type: 3}
   Trajectory: {fileID: 1326493281}
   Popadanie:
   - {fileID: 8296172669170463939}
@@ -33007,6 +32988,7 @@ MonoBehaviour:
   - {fileID: 1201918666}
   speed: {x: 0, y: 0, z: 0}
   mousPos: {x: 0, y: 0, z: 0}
+  paperDestroy: []
 --- !u!4 &2071619183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3087826076476309822, guid: 22a65f7544b078345a517ce96f2d459d,
