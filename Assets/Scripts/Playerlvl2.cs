@@ -50,31 +50,31 @@ public class Playerlvl2 : MonoBehaviour
                     {
                         interval = 0.9f;
                         _animator.SetTrigger("Zamah");
-                        if (amount == 0)
-                        {
-                            Destroy(paper[0]);
-                        }
-                        if (amount == 1)
-                        {
-                            Destroy(paper[1]);
-                        }
-                        if (amount == 2)
-                        {
-                            Destroy(paper[2]);
-                        }
-                        if (amount == 3)
-                        {
-                            Destroy(paper[3]);
-                        }
-                        if (amount == 4)
-                        {
-                            Destroy(paper[4]);
-                        }
-                        if (amount == 5)
-                        {
-                            Destroy(paper[5]);
-                        }
-
+            if (amount == 0)
+            {
+                Destroy(paper[0]);
+            }
+            if (amount == 1)
+            {
+                Destroy(paper[1]);
+            }
+            if (amount == 2)
+            {
+                Destroy(paper[2]);
+            }
+            if (amount == 3)
+            {
+                Destroy(paper[3]);
+            }
+            if (amount == 4)
+            {
+                Destroy(paper[4]);
+            }
+            if (amount == 5)
+            {
+                Destroy(paper[5]);
+            }
+                       
                     }
 
                     if (Input.GetMouseButton(0))
@@ -91,14 +91,14 @@ public class Playerlvl2 : MonoBehaviour
                         speed = (targetPoint - transform.position) * Power;
                         Trajectory.ShowTrajectory(transform.position, speed);
                         Invoke("Mesto", 0.3f);
-
+                      
                     }
                     if (Input.GetMouseButtonUp(0))
                     {
                         _animator.SetTrigger("Kidat");
 
                     }
-                }
+                    
                     var b = Popadanie[0];
                     var q = Popadanie[1];
                     var w = Popadanie[2];
@@ -116,7 +116,7 @@ public class Playerlvl2 : MonoBehaviour
                             _animator.SetTrigger("Victory");
                         }
                     }
-                
+                }
             }
         }
     }

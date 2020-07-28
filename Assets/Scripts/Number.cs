@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Number : MonoBehaviour
 {
+<<<<<<< HEAD
 
    [HideInInspector]  public bool _number = false;
+=======
+    public bool _number = false;
+>>>>>>> parent of c04f0d6... Level3
     private Animator _anim;
 
     public bool _numb = false;
