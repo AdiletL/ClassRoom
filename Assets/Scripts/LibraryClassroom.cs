@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AmountPaper : MonoBehaviour
+public class LibraryClassroom : MonoBehaviour
 {
-    public float amount;
+    private Animator _animator;
 
+    private void Start()
+    {
+        _animator = GetComponent<Animator>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
-            amount += 1;
+            _animator.SetTrigger("Popadanie");
         }
     }
 }
