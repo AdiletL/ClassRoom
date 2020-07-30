@@ -5,11 +5,11 @@ using UnityEngine;
 public class WalkingStickmen :  Number
 {
     public float speed;
-    public Number _number;
+    
     void Update()
     {
         transform.position += Vector3.forward * speed * Time.deltaTime;
-        if (_number._number == true)
+        if (_number == true)
         {
             speed = 0;
         }
