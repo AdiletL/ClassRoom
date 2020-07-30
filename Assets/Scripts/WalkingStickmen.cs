@@ -2,29 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WalkingStickmen :  MonoBehaviour
+public class WalkingStickmen :  Number
 {
     public float speed;
-    private Animator _animator;
-
-    private void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    public Number _number;
     void Update()
     {
         transform.position += Vector3.forward * speed * Time.deltaTime;
-        if (transform.position.z > 7)
+        if (_number._number == true)
         {
-            speed = -speed; 
-            
-             Invoke("Walking180", 1);
+            speed = 0;
+        }
+        
+        if (transform.position.z > 7.2f)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0); speed = -1; 
         }
         else if (transform.position.z < -1f)
         {
-            speed = -speed;
-            Invoke("Walking180", 1);
+            transform.rotation = Quaternion.Euler(0, 0, 0); speed = 1;
         }
     }
-    void Walking180() {  }
+   
 }

@@ -19,7 +19,8 @@ public class Playerlvl2 : MonoBehaviour
 
     [HideInInspector] public Vector3 speed, mousPos, targetPoint;
     [HideInInspector] public Quaternion targetRotation;
-
+   public List<GameObject> paper1 = new List<GameObject>();
+    bool paperamount = false;
     private void Start()
     {
         _animator = GetComponent<Animator>();
@@ -46,34 +47,41 @@ public class Playerlvl2 : MonoBehaviour
             {
                 if (amount != 6)
                 {
+                    for (int i = 0; i < paper1.Count; i--)
+                    {
+                        if (paperamount == true)
+                        {
+                            paper1.RemoveAt(i);
+                        }
+                    }
                     if (Input.GetMouseButtonDown(0))
                     {
                         interval = 0.9f;
                         _animator.SetTrigger("Zamah");
-                        if (amount == 0)
-                        {
-                            Destroy(paper[0]);
-                        }
-                        if (amount == 1)
-                        {
-                            Destroy(paper[1]);
-                        }
-                        if (amount == 2)
-                        {
-                            Destroy(paper[2]);
-                        }
-                        if (amount == 3)
-                        {
-                            Destroy(paper[3]);
-                        }
-                        if (amount == 4)
-                        {
-                            Destroy(paper[4]);
-                        }
-                        if (amount == 5)
-                        {
-                            Destroy(paper[5]);
-                        }
+                        //if (amount == 0)
+                        //{
+                        //    Destroy(paper[0]);
+                        //}
+                        //if (amount == 1)
+                        //{
+                        //    Destroy(paper[1]);
+                        //}
+                        //if (amount == 2)
+                        //{
+                        //    Destroy(paper[2]);
+                        //}
+                        //if (amount == 3)
+                        //{
+                        //    Destroy(paper[3]);
+                        //}
+                        //if (amount == 4)
+                        //{
+                        //    Destroy(paper[4]);
+                        //}
+                        //if (amount == 5)
+                        //{
+                        //    Destroy(paper[5]);
+                        //}
 
                     }
 
@@ -125,8 +133,7 @@ public class Playerlvl2 : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             amount += 1;
-           
-
+            paperamount = true;
         }
     }
 
