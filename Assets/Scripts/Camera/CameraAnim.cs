@@ -10,22 +10,22 @@ public class CameraAnim : MonoBehaviour
     public Next[] nextlvl;
     public CameraAnim cameraanim;
 
-    bool timerminute = false;
+   [HideInInspector] public bool timerminute = false ;
 
     public Animator[] _animator;
 
     public Text minute, timerGaming,paperGaming;
-    public Text[] paperEnd, timerEnd;
+    public Text[] paperEnd, timerEnd, minuTe;
     
 
-    public float timer, timerlvl5;
+    public float timer, timerlvl5, level;
     private float timeStart, timeStars;
-    private int countPaper, timermin;
-    
+    private int countPaper, timermin, g = 0;
+
 
     private void Start()
     {
-        minute.text = 0+":".ToString();
+        minute.text = 0 + ":".ToString();
         paperGaming.text = countPaper.ToString();
         timerGaming.text = timeStart.ToString();
         _animator[_animator.Length] = GetComponent<Animator>();
@@ -34,43 +34,42 @@ public class CameraAnim : MonoBehaviour
     {
         if (player.Popadanieclass != player.quantityclass)
         {
-            if ( player.zone == false)
+            if (player.zone == false)
             {
-                if (timerminute == false)
+                if (countPaper < player.quantitypaper || player.intervalclick != 0)
                 {
-                    if (countPaper < player.quantitypaper|| player.intervalclick != 0)
+                    timeStart += Time.deltaTime;
+                    timerGaming.text = Mathf.Round(timeStart).ToString();
+                    if (timeStart <= 9.5f)
                     {
-                        timeStart += Time.deltaTime;
-                        timerGaming.text = Mathf.Round(timeStart).ToString();
-                        if (timeStart <= 9.5f)
-                        {
-                            timerGaming.text = "0" + Mathf.Round(timeStart).ToString();
-                        }
+                        timerGaming.text = "0" + Mathf.Round(timeStart).ToString();
                     }
+                }
 
-                    if (player.click <= player.quantitypaper&& player.counter >= player.interval)
+                if (countPaper != player.quantitypaper && player.counter >= player.interval)
+                {
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            countPaper += 1;
-                            paperGaming.text = countPaper.ToString();
-                           
-                        }
+                        countPaper += 1;
+                        paperGaming.text = countPaper.ToString();
+
                     }
                 }
             }
         }
-        else 
+        else
         {
             timeStars += Time.deltaTime;
             _animator[0].SetTrigger("CameraVictory");
-            if (player.Stars != player.click || timeStart >= timer)    // еще можно click==Popadanieclass
+            if (player.click > player.Stars || g > 0 && timeStart >= timer || g>0 && timeStart >= timerlvl5)    // еще можно click==Popadanieclass
             {
                 if (timeStars >= 3)
                 {
-                endStars[0].SetActive(true);
-                paperEnd[0].text = countPaper.ToString();
-                timerEnd[0].text = Mathf.Round(timeStart).ToString();
+                    level = 2;
+                    endStars[0].SetActive(true);
+                    paperEnd[0].text = countPaper.ToString();
+                    minuTe[0].text = g + ":".ToString();
+                    timerEnd[0].text = Mathf.Round(timeStart).ToString();
                     if (timeStart <= 9.5f)
                     {
                         timerEnd[0].text = "0" + Mathf.Round(timeStart).ToString();
@@ -91,11 +90,13 @@ public class CameraAnim : MonoBehaviour
             }
             else
             {
-                if (timeStars >=3)
+                if (timeStars >= 3)
                 {
-                endStars[1].SetActive(true);
-                paperEnd[1].text = countPaper.ToString();
-                timerEnd[1].text = Mathf.Round(timeStart).ToString();
+                    level = 2;
+                    endStars[1].SetActive(true);
+                    paperEnd[1].text = countPaper.ToString();
+                    minuTe[1].text = g + ":".ToString();
+                    timerEnd[1].text = Mathf.Round(timeStart).ToString();
                     if (timeStart <= 9.5f)
                     {
                         timerEnd[1].text = "0" + Mathf.Round(timeStart).ToString();
@@ -123,56 +124,59 @@ public class CameraAnim : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
- _animator[0].SetTrigger("CameraVictory");
+                _animator[0].SetTrigger("CameraVictory");
             }
         }
-                if (countPaper == player.quantitypaper && player.intervalclick == 0 || player.zone == true || timerminute == true)
+        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
+        {
+            timeStars += Time.deltaTime;
+            if (timeStars >= 5)
+            {
+                if (player.Popadanieclass != player.quantityclass || timerminute == true)
                 {
-                    timeStars += Time.deltaTime;
-                    if (timeStars >= 5)
+                    level = 1;
+                    endStars[2].SetActive(true);
+                    paperEnd[2].text = countPaper.ToString();
+                    minuTe[2].text = g + ":".ToString();
+                    timerEnd[2].text = Mathf.Round(timeStart).ToString();
+                    if (timeStart <= 9.5f)
                     {
-                        if (player.Popadanieclass != player.quantityclass)
-                        {
-                            endStars[0].SetActive(true);
-                            paperEnd[0].text = countPaper.ToString();
-                            timerEnd[0].text = Mathf.Round(timeStart).ToString();
-                            if (timeStart <= 9.5f)
-                            {
-                               timerEnd[0].text = "0" + Mathf.Round(timeStart).ToString();
-                            }
-                            if (timeStars >= 5.5f)
-                            {
-                              _animator[1].SetTrigger("Stars");
-                            }
+                        timerEnd[2].text = "0" + Mathf.Round(timeStart).ToString();
+                    }
+                    if (timeStars >= 6)
+                    {
+                        SKIP[2].SetActive(true);
+                    }
                     if (timeStars >= 7)
                     {
-                        SKIP[0].SetActive(true);
-                    }
-                        }
+                        SKIP[3].SetActive(true);
                     }
                 }
+            }
+        }
         if (player.zone == true)
         {
             _animator[0].SetTrigger("Camera");
         }
-        if (timeStart >=59)
+        if (timeStart >= 59)
         {
-            timeStart = 0;
-            timeStart += Time.deltaTime;
-            minute.text = 1+":".ToString();
+            g += 1;
+            minute.text = g + ":".ToString();
             timermin = 1;
+            timeStart = 0;
+
         }
+
         if (timermin == 1)
         {
             if (timeStart >= timerlvl5)
             {
-                timeStart = timerlvl5;
                 timerminute = true;
             }
         }
         if (nextlvl[0].LVL == true || nextlvl[1].LVL == true)
         {
-           
+
             cameraanim.enabled = false;
             player.enabled = false;
         }

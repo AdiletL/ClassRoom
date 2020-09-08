@@ -15029,12 +15029,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bf3b219760e06542a11809901a4f59b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quantityclass: 0
+  quantitypaper: 0
+  Stars: 0
   SpeedRotate: 5
   sped: 10
-  interval: 0.5
   Power: 50
-  amount: 0
   Popadanieclass: 0
+  click: 0
+  counter: 0
+  interval: 0.5
+  hitdist: 0
+  intervalclick: 0
   PosRay: {fileID: 0}
   BulletPos: {fileID: 0}
   Bullet: {fileID: 5518074506975297811, guid: c5fcfde5765e24148a9eeb0777e9f21f, type: 3}
@@ -15043,7 +15049,8 @@ MonoBehaviour:
   paper: []
   speed: {x: 0, y: 0, z: 0}
   mousPos: {x: 0, y: 0, z: 0}
-  paperDestroy: []
+  zone: 0
+  sdf: 0
 --- !u!1 &971994748
 GameObject:
   m_ObjectHideFlags: 0
@@ -17529,6 +17536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4ed87b76251b034a82b810cc6ede75b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tr: {fileID: 0}
   lineRendererComponent: {fileID: 1326493279}
 --- !u!1001 &1330080275
 PrefabInstance:

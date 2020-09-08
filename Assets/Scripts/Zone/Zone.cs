@@ -8,8 +8,11 @@ public class Zone : MonoBehaviour
     private BoxCollider _box;
     [HideInInspector] public SpriteRenderer spr;
     public Number _num;
+
+    private int audi;
     private void Start()
     {
+      
         _box = GetComponent<BoxCollider>();
         spr = GetComponent<SpriteRenderer>();
     }
@@ -24,9 +27,9 @@ public class Zone : MonoBehaviour
         }
         if (player.zone == true)
         {
+
             spr.enabled = false;
             _box.enabled = false;
-
         }
     }
     void Active() {

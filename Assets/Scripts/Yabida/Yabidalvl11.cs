@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class Yabidalvl11 : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Animator _animator;
+    public Traektorialvl10 player;
+    public WalkingStickmen walking;
+    private void Start()
     {
-        
+        _animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (player.zone == true)
+        {
+            walking.speed = 0;
+            _animator.SetTrigger("Teacher");
+        }
     }
 }

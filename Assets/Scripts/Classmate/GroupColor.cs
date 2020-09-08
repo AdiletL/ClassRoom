@@ -5,7 +5,7 @@ using UnityEngine;
 public class GroupColor : MonoBehaviour
 {
     private Renderer _renderer;
-
+    [HideInInspector] public bool colorgroup = false;
     private void Start()
     {
 
@@ -16,6 +16,7 @@ public class GroupColor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Bullet"))
         {
+            colorgroup = true;
             _renderer.material.color = Color.red;
         }
     }

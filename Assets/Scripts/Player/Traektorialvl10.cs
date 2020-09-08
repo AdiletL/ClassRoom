@@ -7,8 +7,9 @@ public class Traektorialvl10 : MonoBehaviour
 {
     public int quantityclass, quantitypaper, Stars;
     public float SpeedRotate, sped, Power = 50;
+    public AudioClip[] _audioClips;
 
-    [HideInInspector] public float Popadanieclass, click, counter, interval = 1, hitdist, intervalclick;
+    [HideInInspector] public float Popadanieclass, click, counter, interval = 2, hitdist, intervalclick, timloosing, timloos;
 
     public Transform PosRay, BulletPos;
     public GameObject Bullet;
@@ -51,24 +52,34 @@ public class Traektorialvl10 : MonoBehaviour
 
             if (Popadanieclass != quantityclass)
             {
-                if (click == quantitypaper)
+                if (click == quantitypaper && intervalclick == 0)
                 {
-                    if (Popadanieclass != quantityclass)
+                    timloosing += Time.deltaTime;
+
+                    if (timloosing >= 3)
                     {
-                        _animator.SetTrigger("Proigriw");
+                        if (Popadanieclass != quantityclass)
+                        {
+                            _animator.SetTrigger("Proigriw");
+                            timloos += 1;
+                        }
+                    }
+                    if (timloos == 1)
+                    {
+                        _audiosourse.PlayOneShot(_audioClips[1]);
                     }
 
                 }
 
-                if (click != quantitypaper + 1 && zone == false)
+                if (click != quantitypaper && zone == false)
                 {
-                    if (counter >= interval)
+                    if (counter >= interval && intervalclick == 0)
                     {
                         if (Input.GetMouseButtonDown(0))
                         {
                             intervalclick = 1;
                             _box.enabled = true;
-                            click += 1;
+                           
                             _animator.SetTrigger("Zamah");
                             for (int i = 0; i < click; i++)
                             {
@@ -90,22 +101,24 @@ public class Traektorialvl10 : MonoBehaviour
                         }
 
                     }
-                    else
-                    {
-                        Trajectory.lineRendererComponent.enabled = false;
-                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
-                    }
+                  
                     if (intervalclick == 1)
                     {
                         if (Input.GetMouseButtonUp(0))
                         {
+                            counter = 0;
                             _box.enabled = false;
                             _animator.SetTrigger("Kidat");
-
+                            click += 1;
                             intervalclick = 0;
 
-                            counter = 0;
+                           
                         }
+                    }
+                    if (intervalclick == 0)
+                    {
+                        Trajectory.lineRendererComponent.enabled = false;
+                        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), Time.deltaTime * 2);
                     }
                 }
 
@@ -122,8 +135,6 @@ public class Traektorialvl10 : MonoBehaviour
                             if (Popadanieclass == quantityclass)
                             {
                                 _animator.SetTrigger("Victory");
-                                _audiosourse.Play();
-
                             }
                         }
                     }
@@ -144,7 +155,7 @@ public class Traektorialvl10 : MonoBehaviour
     {
         if (click < quantitypaper + 1)
         {
-
+            _audiosourse.PlayOneShot(_audioClips[0]);
             GameObject s = Instantiate(Bullet, BulletPos.position, transform.rotation);
             s.GetComponent<Rigidbody>().AddForce(mousPos.normalized * sped, ForceMode.Impulse);
         }

@@ -10,10 +10,10 @@ public class TrajectoryRendererlvl10 : MonoBehaviour
     public float maxLenght = 100;
 
     private Ray ray;
-    private RaycastHit hit;
+   [HideInInspector] public RaycastHit hit;
     private Vector3 direction;
-    
-
+    public float plas;
+    public Vector3 sd;
     void Start()
     {
         
@@ -47,15 +47,21 @@ public class TrajectoryRendererlvl10 : MonoBehaviour
                 
                 ray = new Ray(hit.point, Vector3.Reflect(ray.direction, hit.normal));
                 if (hit.collider.tag != "Stena")
+                    
                 {
                     break;
+                   
+                    
                 }
                 else
                 {
-                    
+                    plas = hit.point.x;
+                    sd = hit.point;
                     lineRendererComponent.positionCount += 1;
-                    lineRendererComponent.SetPosition(lineRendererComponent.positionCount - 1, ray.origin + ray.direction  * remaininLenght);
+                    lineRendererComponent.SetPosition(lineRendererComponent.positionCount - 1, ray.origin + ray.direction);
+
                 }
+             
             }
         }
     }

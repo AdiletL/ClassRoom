@@ -15,12 +15,12 @@ public class Lvl10Camera : MonoBehaviour
     public Animator[] _animator;
 
     public Text minute, timerGaming, paperGaming;
-    public Text[] paperEnd, timerEnd;
+    public Text[] paperEnd, timerEnd, minuTe;
 
 
-    public float timer, timerlvl5;
+    public float timer, timerlvl5, level;
     private float timeStart, timeStars;
-    private int countPaper, timermin;
+    private int countPaper, timermin, g = 0;
 
 
     private void Start()
@@ -36,26 +36,23 @@ public class Lvl10Camera : MonoBehaviour
         {
             if (player.zone == false)
             {
-                if (timerminute == false)
+                if (countPaper < player.quantitypaper || player.intervalclick != 0)
                 {
-                    if (countPaper < player.quantitypaper || player.intervalclick != 0)
+                    timeStart += Time.deltaTime;
+                    timerGaming.text = Mathf.Round(timeStart).ToString();
+                    if (timeStart <= 9.5f)
                     {
-                        timeStart += Time.deltaTime;
-                        timerGaming.text = Mathf.Round(timeStart).ToString();
-                        if (timeStart <= 9.5f)
-                        {
-                            timerGaming.text = "0" + Mathf.Round(timeStart).ToString();
-                        }
+                        timerGaming.text = "0" + Mathf.Round(timeStart).ToString();
                     }
+                }
 
-                    if (player.click <= player.quantitypaper && player.counter >= player.interval)
+                if (countPaper != player.quantitypaper && player.counter >= player.interval)
+                {
+                    if (Input.GetMouseButtonDown(0))
                     {
-                        if (Input.GetMouseButtonDown(0))
-                        {
-                            countPaper += 1;
-                            paperGaming.text = countPaper.ToString();
+                        countPaper += 1;
+                        paperGaming.text = countPaper.ToString();
 
-                        }
                     }
                 }
             }
@@ -64,12 +61,14 @@ public class Lvl10Camera : MonoBehaviour
         {
             timeStars += Time.deltaTime;
             _animator[0].SetTrigger("CameraVictory");
-            if (player.Stars != player.click || timeStart >= timer)    // еще можно click==Popadanieclass
+            if (player.click > player.Stars || g > 0 && timeStart >= timer || g > 0 && timeStart >= timerlvl5)    // еще можно click==Popadanieclass
             {
                 if (timeStars >= 3)
                 {
+                    level = 2;
                     endStars[0].SetActive(true);
                     paperEnd[0].text = countPaper.ToString();
+                    minuTe[0].text = g + ":".ToString();
                     timerEnd[0].text = Mathf.Round(timeStart).ToString();
                     if (timeStart <= 9.5f)
                     {
@@ -93,8 +92,10 @@ public class Lvl10Camera : MonoBehaviour
             {
                 if (timeStars >= 3)
                 {
+                    level = 2;
                     endStars[1].SetActive(true);
                     paperEnd[1].text = countPaper.ToString();
+                    minuTe[1].text = g + ":".ToString();
                     timerEnd[1].text = Mathf.Round(timeStart).ToString();
                     if (timeStart <= 9.5f)
                     {
@@ -112,10 +113,10 @@ public class Lvl10Camera : MonoBehaviour
                             }
                         }
                     }
-                }
-                if (timeStars >= 6)
-                {
-                    SKIP[1].SetActive(true);
+                    if (timeStars >= 6)
+                    {
+                        SKIP[1].SetActive(true);
+                    }
                 }
             }
         }
@@ -126,27 +127,29 @@ public class Lvl10Camera : MonoBehaviour
                 _animator[0].SetTrigger("CameraVictory");
             }
         }
-        if (countPaper == player.quantitypaper && player.intervalclick == 0 || player.zone == true || timerminute == true)
+        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
         {
             timeStars += Time.deltaTime;
             if (timeStars >= 5)
             {
-                if (player.Popadanieclass != player.quantityclass)
+                if (player.Popadanieclass != player.quantityclass || timerminute == true)
                 {
-                    endStars[0].SetActive(true);
-                    paperEnd[0].text = countPaper.ToString();
-                    timerEnd[0].text = Mathf.Round(timeStart).ToString();
+                    level = 1;
+                    endStars[2].SetActive(true);
+                    paperEnd[2].text = countPaper.ToString();
+                    minuTe[2].text = g + ":".ToString();
+                    timerEnd[2].text = Mathf.Round(timeStart).ToString();
                     if (timeStart <= 9.5f)
                     {
-                        timerEnd[0].text = "0" + Mathf.Round(timeStart).ToString();
+                        timerEnd[2].text = "0" + Mathf.Round(timeStart).ToString();
                     }
-                    if (timeStars >= 5.5f)
+                    if (timeStars >= 6)
                     {
-                        _animator[1].SetTrigger("Stars");
+                        SKIP[2].SetActive(true);
                     }
                     if (timeStars >= 7)
                     {
-                        SKIP[0].SetActive(true);
+                        SKIP[3].SetActive(true);
                     }
                 }
             }
@@ -157,16 +160,17 @@ public class Lvl10Camera : MonoBehaviour
         }
         if (timeStart >= 59)
         {
-            timeStart = 0;
-            timeStart += Time.deltaTime;
-            minute.text = 1 + ":".ToString();
+            g += 1;
+            minute.text = g + ":".ToString();
             timermin = 1;
+            timeStart = 0;
+            
         }
+   
         if (timermin == 1)
         {
             if (timeStart >= timerlvl5)
             {
-                timeStart = timerlvl5;
                 timerminute = true;
             }
         }

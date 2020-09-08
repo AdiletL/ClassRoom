@@ -5,14 +5,11 @@ using UnityEngine;
 public class Teacher : Number
 {
     public Traektoria player;
-    public AudioClip audioClip;
+  
     private float counter;
     public float StartInterval;
 
-    private void Start()
-    {
-        audioClip = GetComponent<AudioClip>();
-    }
+
 
     void Update()
     {
@@ -33,7 +30,6 @@ public class Teacher : Number
             
             StartInterval = 0;
             _anim.SetTrigger("Popadanie");
-          _audiosource.PlayOneShot(audioClip);
         }
 
     }
