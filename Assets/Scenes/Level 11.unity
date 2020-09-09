@@ -14504,7 +14504,7 @@ GameObject:
   - component: {fileID: 390352242672443588}
   m_Layer: 0
   m_Name: 010.Carpet_Plane.006
-  m_TagString: UseGravity
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35285,7 +35285,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c80659c3934ae994ea21b912c9da14d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _poof: {fileID: 0}
 --- !u!1 &8296172668498891805
 GameObject:
   m_ObjectHideFlags: 0

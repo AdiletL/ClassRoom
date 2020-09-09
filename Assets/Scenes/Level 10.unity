@@ -31240,7 +31240,7 @@ GameObject:
   - component: {fileID: 390352242672443588}
   m_Layer: 0
   m_Name: 010.Carpet_Plane.006
-  m_TagString: UseGravity
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
