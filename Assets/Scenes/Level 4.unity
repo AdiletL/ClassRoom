@@ -11318,10 +11318,10 @@ RectTransform:
   m_Father: {fileID: 1791169278721867701}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.300003, y: 5.75}
-  m_SizeDelta: {x: -71.3, y: -88.5}
+  m_SizeDelta: {x: 158.7, y: 139.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &220683238418188049
 Transform:
@@ -13411,6 +13411,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c30e07cccc5b9d45be00ea70f90c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 963194229}
   LVL: 0
   restar: 0
   rand: {fileID: 6230617775440586970}
@@ -14017,10 +14018,10 @@ RectTransform:
   m_Father: {fileID: 1438991784950703298}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 3.8499756, y: 440.05005}
-  m_SizeDelta: {x: 1126.9, y: 905.7}
+  m_SizeDelta: {x: 996.9, y: 965.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1438991785884278707
 GameObject:
@@ -16531,10 +16532,10 @@ RectTransform:
   m_Father: {fileID: 1837559458879649348}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 27.799988, y: -111.96997}
-  m_SizeDelta: {x: 1189.81, y: 1442.6399}
+  m_SizeDelta: {x: 1059.81, y: 1616.6399}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1837559460452284787
 GameObject:
@@ -17781,18 +17782,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1987032301333717153}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1987032301333717154}
-        m_MethodName: restartlvl
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1987032301333717153
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17834,6 +17824,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c30e07cccc5b9d45be00ea70f90c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 963194229}
   LVL: 0
   restar: 0
   rand: {fileID: 0}
@@ -20903,10 +20894,10 @@ RectTransform:
   m_Father: {fileID: 3638831076710778783}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 1.300003, y: 5.75}
-  m_SizeDelta: {x: -71.3, y: -88.5}
+  m_SizeDelta: {x: 158.7, y: 139.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2924850608330035841
 GameObject:
@@ -23172,6 +23163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c30e07cccc5b9d45be00ea70f90c02c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _camera: {fileID: 963194229}
   LVL: 0
   restar: 0
   rand: {fileID: 8994711786417443060}

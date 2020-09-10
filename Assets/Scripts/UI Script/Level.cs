@@ -24,9 +24,6 @@ public class Level : MonoBehaviour
 
     private void Start()
     {
-      
-
-
             PlayerPrefs.SetInt("lvl", PlayerPrefs.GetInt("lvl") + lvl);  //PlayerPrefs.SetInt("lvl",PlayerPrefs.GetInt("lvl")+1);PlayerPrefs.SetInt("lvl",lvl);
             PlayerPrefs.Save();
             islvl = PlayerPrefs.GetInt("lvl");

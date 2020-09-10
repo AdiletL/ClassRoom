@@ -7,7 +7,7 @@ public class Lvl10Camera : MonoBehaviour
 {
     public GameObject[] endStars, SKIP;
     public Traektorialvl10 player;
-    public Next[] nextlvl;
+    public Nextlvl10[] nextlvl;
     public Lvl10Camera cameraanim;
 
     bool timerminute = false;

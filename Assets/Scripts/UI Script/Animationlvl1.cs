@@ -4,5 +4,12 @@ using UnityEngine;
 
 public class Animationlvl1 : MonoBehaviour
 {
-    public void Destr() { Destroy(gameObject); }
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Destroy(gameObject);
+        }
+    }
 }

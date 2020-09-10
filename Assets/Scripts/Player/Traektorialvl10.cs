@@ -9,7 +9,7 @@ public class Traektorialvl10 : MonoBehaviour
     public float SpeedRotate, sped, Power = 50;
     public AudioClip[] _audioClips;
 
-    [HideInInspector] public float Popadanieclass, click, counter, interval = 2, hitdist, intervalclick, timloosing, timloos;
+    [HideInInspector] public float Popadanieclass, click, counter, interval = 1.5f, hitdist, intervalclick, timloosing, timloos;
 
     public Transform PosRay, BulletPos;
     public GameObject Bullet;
