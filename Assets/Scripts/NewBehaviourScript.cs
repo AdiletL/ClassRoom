@@ -52,7 +52,7 @@ public class NewBehaviourScript : MonoBehaviour
         {
             _audioSource.PlayOneShot(_audioClips[0], 0.5f);
             Vector3 dir = collision.contacts[0].normal;
-            if (tr.plas > 0)
+            if (tr.plas < -12)
             {
                 angle = tr.plas * tr.plas + plwsPlus - tr.plas * -30;
             Vector3 plus = new Vector3(transform.position.x - angle, transform.position.y, transform.position.z);
@@ -66,6 +66,7 @@ public class NewBehaviourScript : MonoBehaviour
                 _rigidbody.AddForce(dir * power - plus, ForceMode.Impulse);
 
             }
+        
 
 
         }

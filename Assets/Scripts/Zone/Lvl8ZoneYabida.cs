@@ -7,7 +7,7 @@ public class Lvl8ZoneYabida : Zone
  
     void Update()
     {
-        if (_num._number == true)
+        if (Number._number == true)
         {
             gameObject.SetActive(false);
         }

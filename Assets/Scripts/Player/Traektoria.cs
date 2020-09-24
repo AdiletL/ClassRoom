@@ -15,7 +15,7 @@ public class Traektoria : MonoBehaviour
     public Transform PosRay,  BulletPos;
     public GameObject Bullet;
     public TrajectoryRenderer Trajectory;
-    public Number[] Popadanie;
+    
     public GameObject[] paper;
     
 
@@ -124,22 +124,19 @@ public class Traektoria : MonoBehaviour
 
                     if (sdf == true)
                     {
-                        for (int i = 0; i < Popadanie.Length; i++)
-                        {
-                            var j = Popadanie[i];
-                            if (j._number == true)
-                            {
-                                Popadanieclass += 1;
-                                j._number = false;
-                                Debug.Log("Hit");
-                                if (Popadanieclass == quantityclass)
-                                {
-                                    _animator.SetTrigger("Victory");
-                                    _audiosourse.Play();
 
-                                }
-                            }
+                    if (Number._number == true)
+                    {
+                        Popadanieclass += 1;
+                        Number._number = false;
+                        Debug.Log("Hit");
+                        if (Popadanieclass == quantityclass)
+                        {
+                            _animator.SetTrigger("Victory");
+                            _audiosourse.Play();
+
                         }
+                    }
                     }
                 }
             

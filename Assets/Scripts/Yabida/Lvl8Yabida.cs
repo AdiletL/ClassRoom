@@ -6,15 +6,15 @@ public class Lvl8Yabida : Number
 {
     public GameObject Particle;
     public Transform Object;
-    public Traektoria player;
-    public float speed, StartInterval;
+    public Number num;
+    public float speed, StartInterval,EndStart;
     private float counter;
-    
+    public Traektoria player;
     void Update()
     {
         counter += Time.deltaTime;
 
-        if (_number == true)
+        if (num.thasd == 1)
         {
             speed = 0;
         }
@@ -29,11 +29,11 @@ transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90,
                 transform.Rotate(-Vector3.up * speed * Time.deltaTime);
 
             }
-            if (counter >= 8)
+            if (counter >= StartInterval)
             {
                 transform.Rotate(Vector3.up * speed * Time.deltaTime);
             }
-            if (counter >= 16)
+            if (counter >= EndStart)
             {
                 counter = 0;
             }

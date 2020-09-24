@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lvl1Level2 : MonoBehaviour
 {
-    void Start()
+    public void Lvl()
     {
         PlayerPrefs.SetInt("lvl", PlayerPrefs.GetInt("lvl") + 2);
         PlayerPrefs.Save();

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TrajectoryRenderer : MonoBehaviour
 {
-    public Traektoria _tr;
+    public Traektoria player;
     public LineRenderer lineRendererComponent;
 
     private void Start()
@@ -14,7 +14,7 @@ public class TrajectoryRenderer : MonoBehaviour
 
     private void Update()
     {
-        if (_tr.zone == true)
+        if (player.zone == true)
         {
             lineRendererComponent.enabled = false;
         }

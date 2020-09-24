@@ -7,15 +7,15 @@ public class Yabida : Number
     public float Rotate1, Rotate2, speed, StartInterval;
     public GameObject Particle;
     public Transform Object;
-    public Traektoria player;
-  
+    public int EndStart;
+   
     private float counter;
-    
+    public Traektoria player;
     void Update()
     {
         counter += Time.deltaTime;
 
-        if (_number == true)
+        if (thasd == 1)
         {
             speed = 0;
             
@@ -31,11 +31,11 @@ transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90,
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, Rotate1, 0), speed * Time.deltaTime);
                
             }
-            if (counter >= 7)
+            if (counter >= StartInterval)
             {
                 transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, Rotate2, 0), speed * Time.deltaTime);
             }
-            if (counter >= 14)
+            if (counter >= EndStart)
             {
                 counter = 0;
             }

@@ -10,18 +10,18 @@ public class CameraAnim : MonoBehaviour
     public Next[] nextlvl;
     public CameraAnim cameraanim;
 
-   [HideInInspector] public bool timerminute = false ;
+    [HideInInspector] public bool timerminute = false;
 
     public Animator[] _animator;
 
-    public Text minute, timerGaming,paperGaming;
+    public Text minute, timerGaming, paperGaming;
     public Text[] paperEnd, timerEnd, minuTe;
-    
 
-    public float timer, timerlvl5, level;
+    [HideInInspector] public static int level;
+    public float timer, timerlvl5;
     private float timeStart, timeStars;
     private int countPaper, timermin, g = 0;
-
+  
 
     private void Start()
     {
@@ -60,11 +60,16 @@ public class CameraAnim : MonoBehaviour
         else
         {
             timeStars += Time.deltaTime;
-            _animator[0].SetTrigger("CameraVictory");
+            if (timeStars >= 1)
+            {
+_animator[0].SetTrigger("CameraVictory");
+            }
+            
             if (player.click > player.Stars || g > 0 && timeStart >= timer || g>0 && timeStart >= timerlvl5)    // еще можно click==Popadanieclass
             {
                 if (timeStars >= 3)
                 {
+                
                     level = 2;
                     endStars[0].SetActive(true);
                     paperEnd[0].text = countPaper.ToString();
@@ -124,12 +129,17 @@ public class CameraAnim : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                _animator[0].SetTrigger("CameraVictory");
+                if (timeStars >= 1)
+            {
+_animator[0].SetTrigger("CameraVictory");
+            }
             }
         }
         if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
         {
             timeStars += Time.deltaTime;
+           
+            
             if (timeStars >= 5)
             {
                 if (player.Popadanieclass != player.quantityclass || timerminute == true)

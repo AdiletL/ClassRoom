@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Teacher : Number
 {
+
     public Traektoria player;
-  
     private float counter;
     public float StartInterval;
 

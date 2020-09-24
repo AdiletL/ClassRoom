@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Number : MonoBehaviour
 {
-    [HideInInspector] public bool _number = false;
+    [HideInInspector] public static bool _number = false;
+    [HideInInspector] public  bool number = false;
     public Animator _anim;
-   [HideInInspector] public BoxCollider _Box;
-  
+   public BoxCollider _Box;
+    public int thasd = 0;
 
     private void Start()
     {
@@ -20,8 +21,12 @@ public class Number : MonoBehaviour
         if (other.gameObject.CompareTag("Bullet"))
         {
             _anim.SetTrigger("Popadanie");
+           number = true;
+            number = false;
             _number = true;
+            thasd = 1;
             _Box.enabled = false;
+            
         }
     }
 }

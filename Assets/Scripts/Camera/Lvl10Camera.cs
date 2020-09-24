@@ -17,8 +17,8 @@ public class Lvl10Camera : MonoBehaviour
     public Text minute, timerGaming, paperGaming;
     public Text[] paperEnd, timerEnd, minuTe;
 
-
-    public float timer, timerlvl5, level;
+    public static int level;
+    public float timer, timerlvl5;
     private float timeStart, timeStars;
     private int countPaper, timermin, g = 0;
 
@@ -60,7 +60,10 @@ public class Lvl10Camera : MonoBehaviour
         else
         {
             timeStars += Time.deltaTime;
-            _animator[0].SetTrigger("CameraVictory");
+            if (timeStars >= 1)
+            {
+                _animator[0].SetTrigger("CameraVictory");
+            }
             if (player.click > player.Stars || g > 0 && timeStart >= timer || g > 0 && timeStart >= timerlvl5)    // еще можно click==Popadanieclass
             {
                 if (timeStars >= 3)
@@ -124,7 +127,10 @@ public class Lvl10Camera : MonoBehaviour
         {
             if (Input.GetMouseButtonUp(0))
             {
-                _animator[0].SetTrigger("CameraVictory");
+                if (timeStars >= 1)
+                {
+                    _animator[0].SetTrigger("CameraVictory");
+                }
             }
         }
         if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)

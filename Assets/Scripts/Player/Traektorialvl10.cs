@@ -14,7 +14,7 @@ public class Traektorialvl10 : MonoBehaviour
     public Transform PosRay, BulletPos;
     public GameObject Bullet;
     public TrajectoryRendererlvl10 Trajectory;
-    public Number[] Popadanie;
+   
     public GameObject[] paper;
 
 
@@ -24,7 +24,7 @@ public class Traektorialvl10 : MonoBehaviour
 
     [HideInInspector] public Vector3 speed, mousPos;
 
-    [HideInInspector] public bool zone = false, sdf = false;
+    [HideInInspector] public  bool zone = false, sdf = false;
 
     private void Start()
     {
@@ -124,20 +124,18 @@ public class Traektorialvl10 : MonoBehaviour
 
                 if (sdf == true)
                 {
-                    for (int i = 0; i < Popadanie.Length; i++)
-                    {
-                        var j = Popadanie[i];
-                        if (j._number == true)
+                   
+                        if (Number._number == true)
                         {
                             Popadanieclass += 1;
-                            j._number = false;
+                            Number._number = false;
                             Debug.Log("Hit");
                             if (Popadanieclass == quantityclass)
                             {
                                 _animator.SetTrigger("Victory");
                             }
                         }
-                    }
+                    
                 }
             }
 

@@ -7,9 +7,9 @@ public class Zone : MonoBehaviour
     public Traektoria player;
     private BoxCollider _box;
     [HideInInspector] public SpriteRenderer spr;
-    public Number _num;
+    public Number _number;
 
-    private int audi;
+   
     private void Start()
     {
       
@@ -19,7 +19,7 @@ public class Zone : MonoBehaviour
  
     private void Update()
     {
-        if (_num._number == true)
+        if (_number.number == true)
         {
             _box.enabled = false;
             spr.enabled = false;

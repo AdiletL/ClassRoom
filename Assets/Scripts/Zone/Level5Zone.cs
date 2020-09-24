@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Level5Zone : Zone
 {
+    public Traektoria pl;
+    public Number num;
     void Update()
     {
-        if (player.zone == true || _num._number == true)
+        if (pl.zone == true || num.thasd == 1)
         {
             gameObject.SetActive(false);
         }

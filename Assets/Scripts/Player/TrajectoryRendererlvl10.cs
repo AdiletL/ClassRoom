@@ -50,13 +50,11 @@ public class TrajectoryRendererlvl10 : MonoBehaviour
                     
                 {
                     break;
-                   
-                    
+
                 }
                 else
                 {
-                    plas = hit.point.x;
-                    sd = hit.point;
+                    plas =lineRendererComponent.GetPosition(0).x;
                     lineRendererComponent.positionCount += 1;
                     lineRendererComponent.SetPosition(lineRendererComponent.positionCount - 1, ray.origin + ray.direction);
 

@@ -36,14 +36,13 @@ public class Lvl8Teacher : Number
                 }
             }
            
-            if (_number == false)
+            if (number == false)
             {
-             
                 if (count <= 4)
                 {
                     Povorot();
                 }
-                if (count >= 2.5f && count <= 9)
+                if (count >= 2f && count <= 9)
                 {
                     rotation = true;
                 }
@@ -55,6 +54,7 @@ public class Lvl8Teacher : Number
                 {
                     rotation = false;
                 }
+                
             }
         }
        
