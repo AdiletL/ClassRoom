@@ -14,6 +14,7 @@ TagManager:
   - InvizBox2
   - Stena
   - Down
+  - Cloused
   layers:
   - Default
   - TransparentFX

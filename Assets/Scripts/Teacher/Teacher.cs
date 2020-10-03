@@ -15,10 +15,14 @@ public class Teacher : Number
     {
 
         counter += Time.deltaTime;
-        if (counter < StartInterval)
+        if (counter <= StartInterval)
         {
             transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -65, 0), Time.deltaTime);
-            Invoke("Povorot", 7);
+            
+        }
+        if (counter >= StartInterval)
+        {
+transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -110, 0), Time.deltaTime);
         }
 
         if (counter >= 14)
@@ -33,8 +37,6 @@ public class Teacher : Number
         }
 
     }
-    void Povorot() { transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -110, 0), Time.deltaTime);
-     
-    }
+    
    
 }

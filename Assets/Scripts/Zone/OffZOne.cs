@@ -4,35 +4,46 @@ using UnityEngine;
 
 public class OffZOne : MonoBehaviour
 {
-    private float interval = 3;
-    private float counter;
-    private BoxCollider _box;
-    private SpriteRenderer _sprite;
+
+    public AudioClip[] _audioClips;
+    private AudioSource _audioSource;
+    private Rigidbody _rigidbody;
+    public TrajectoryRendererlvl10 tr;
+    private float speed;
+    public Vector3 df;
+    public float angle, power, plwsPlus, plwsMinus;
 
     private void Start()
     {
-        _box = GetComponent<BoxCollider>();
-        _sprite = GetComponent<SpriteRenderer>();
+        _rigidbody = GetComponent<Rigidbody>();
+        _audioSource = GetComponent<AudioSource>();
     }
-    private void FixedUpdate()
+
+    private void OnCollisionEnter(Collision collision)
     {
-        if (PlayerPrefs.GetInt("re") == 1)
+        if (collision.gameObject.CompareTag("Stena"))
         {
-            counter += Time.deltaTime;
-            if (counter>=interval)
+            _audioSource.PlayOneShot(_audioClips[0], 0.5f);
+            Vector3 dir = collision.contacts[0].normal;
+            if (tr.plas < -12)
             {
-                _box.enabled = false;
-                _sprite.enabled = false;
+                angle = tr.plas * tr.plas + plwsPlus - tr.plas + tr.plas;
+                Vector3 plus = new Vector3(transform.position.x - angle, transform.position.y, transform.position.z);
+                _rigidbody.AddForce(dir * power - plus, ForceMode.Impulse);
+
             }
             else
             {
-                _box.enabled = true;
-                _sprite.enabled = true;
+                angle = tr.plas * tr.plas + plwsMinus - tr.plas * tr.plas;
+                Vector3 plus = new Vector3(transform.position.x - angle, transform.position.y, transform.position.z);
+                _rigidbody.AddForce(dir * power - plus, ForceMode.Impulse);
+
             }
-            if (counter >= 6)
-            {
-                counter = 0;
-            }
+        }
+        if (collision.gameObject.CompareTag("UseGravity"))
+        {
+            _rigidbody.constraints = RigidbodyConstraints.None;
+            _rigidbody.useGravity = true;
         }
     }
 }

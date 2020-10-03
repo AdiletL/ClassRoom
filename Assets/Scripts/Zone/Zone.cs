@@ -8,7 +8,8 @@ public class Zone : MonoBehaviour
     private BoxCollider _box;
     [HideInInspector] public SpriteRenderer spr;
     public Number _number;
-
+    private float counter;
+    private float ins = 6;
    
     private void Start()
     {
@@ -19,11 +20,17 @@ public class Zone : MonoBehaviour
  
     private void Update()
     {
-        if (_number.number == true)
+        if (_number.thasd == 1)
         {
+            counter += Time.deltaTime;
             _box.enabled = false;
             spr.enabled = false;
-            Invoke("Active", 6);
+            if (counter >= ins)
+            {
+        
+        _box.enabled = true;
+        spr.enabled = true; _number.thasd = 0;
+            }
         }
         if (player.zone == true)
         {
@@ -33,8 +40,7 @@ public class Zone : MonoBehaviour
         }
     }
     void Active() {
-        _box.enabled = true;
-        spr.enabled = true;
+       
     }
 
 }

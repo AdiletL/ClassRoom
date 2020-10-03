@@ -16,7 +16,7 @@ public class Number : MonoBehaviour
         _Box = GetComponent<BoxCollider>();
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Bullet"))
         {

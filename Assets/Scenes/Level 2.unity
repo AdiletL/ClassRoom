@@ -1191,8 +1191,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c97afc556caea1c44969477eb7ddec74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ConformX: 1
-  ConformY: 1
+  ConformX: 0
+  ConformY: 0
   Logging: 0
 --- !u!1 &139557014
 GameObject:
@@ -16508,7 +16508,7 @@ RectTransform:
   m_GameObject: {fileID: 1433746463625423410}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 101.989685}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1014, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1433746462960439619}
   m_RootOrder: 1
@@ -19708,7 +19708,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972787380620403578}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.0008087158}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1972787381066727910}
@@ -19716,7 +19716,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 168.5, y: 0.00018310547}
+  m_AnchoredPosition: {x: 180, y: 0.00018310547}
   m_SizeDelta: {x: 407.38, y: 144.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1972787381066727908
@@ -19768,7 +19768,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1972787381066727911}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.00016784668}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1972787380620403583}
@@ -19777,7 +19777,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -36.2, y: 768.2}
+  m_AnchoredPosition: {x: -48, y: 768.2}
   m_SizeDelta: {x: 407.38, y: 144.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1972787381066727911
@@ -19969,6 +19969,7 @@ MonoBehaviour:
   _audioClips:
   - {fileID: 8300000, guid: d163fc810edfcca4bb096bd66e095519, type: 3}
   - {fileID: 8300000, guid: b28de4ccdd3fe7d409792abb5287157d, type: 3}
+  clickbayt: 0
   Popadanieclass: 0
   click: 0
   counter: 0
@@ -25675,14 +25676,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 5471886212355581837}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8db406f81719de4aa5c0309c97a3683, type: 3}
+  m_Script: {fileID: 11500000, guid: 2a4a3a5938fc81a448f0ecc6e0942a4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2054046791028511390}
   spr: {fileID: 0}
   _number: {fileID: 2106224078666002684}
-  pl: {fileID: 2054046791028511390}
-  num: {fileID: 2106224078666002684}
 --- !u!222 &5496721082091508793
 CanvasRenderer:
   m_ObjectHideFlags: 0

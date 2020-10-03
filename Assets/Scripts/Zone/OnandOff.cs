@@ -8,8 +8,9 @@ public class OnandOff : MonoBehaviour
     private BoxCollider _box;
     [HideInInspector] public SpriteRenderer spr;
     public Number numer;
-
-    private int audi;
+    private float counter;
+    private float ins = 6;
+  
     private void Start()
     {
 
@@ -19,11 +20,17 @@ public class OnandOff : MonoBehaviour
 
     private void Update()
     {
-        if (numer.number == true)
+        if (numer.thasd == 1)
         {
+            counter += Time.deltaTime;
             _box.enabled = false;
             spr.enabled = false;
-            Invoke("Active", 6);
+            if (counter >= ins)
+            {
+                _box.enabled = true;
+                spr.enabled = true;
+                numer.thasd = 0;
+            }
         }
         if (player.zone == true)
         {
@@ -31,11 +38,6 @@ public class OnandOff : MonoBehaviour
             spr.enabled = false;
             _box.enabled = false;
         }
-    }
-    void Active()
-    {
-        _box.enabled = true;
-        spr.enabled = true;
     }
 
 }

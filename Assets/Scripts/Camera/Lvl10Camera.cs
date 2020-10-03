@@ -32,6 +32,7 @@ public class Lvl10Camera : MonoBehaviour
     }
     void Update()
     {
+        countPaper = player.clickbayt;
         if (player.Popadanieclass != player.quantityclass)
         {
             if (player.zone == false)
@@ -46,15 +47,7 @@ public class Lvl10Camera : MonoBehaviour
                     }
                 }
 
-                if (countPaper != player.quantitypaper && player.counter >= player.interval)
-                {
-                    if (Input.GetMouseButtonDown(0))
-                    {
-                        countPaper += 1;
-                        paperGaming.text = countPaper.ToString();
-
-                    }
-                }
+                paperGaming.text = countPaper.ToString();
             }
         }
         else
@@ -123,14 +116,13 @@ public class Lvl10Camera : MonoBehaviour
                 }
             }
         }
-        if (countPaper == player.quantitypaper)
+        if (countPaper == player.quantitypaper && player.intervalclick == 0)
         {
-            if (Input.GetMouseButtonUp(0))
-            {
+           
                 if (timeStars >= 1)
                 {
                     _animator[0].SetTrigger("CameraVictory");
-                }
+                
             }
         }
         if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
@@ -140,23 +132,25 @@ public class Lvl10Camera : MonoBehaviour
             {
                 if (player.Popadanieclass != player.quantityclass || timerminute == true)
                 {
-                    level = 1;
-                    endStars[2].SetActive(true);
-                    paperEnd[2].text = countPaper.ToString();
-                    minuTe[2].text = g + ":".ToString();
-                    timerEnd[2].text = Mathf.Round(timeStart).ToString();
-                    if (timeStart <= 9.5f)
-                    {
-                        timerEnd[2].text = "0" + Mathf.Round(timeStart).ToString();
-                    }
-                    if (timeStars >= 6)
-                    {
-                        SKIP[2].SetActive(true);
-                    }
-                    if (timeStars >= 7)
-                    {
-                        SKIP[3].SetActive(true);
-                    }
+                   
+                        level = 1;
+                        endStars[2].SetActive(true);
+                        paperEnd[2].text = countPaper.ToString();
+                        minuTe[2].text = g + ":".ToString();
+                        timerEnd[2].text = Mathf.Round(timeStart).ToString();
+                        if (timeStart <= 9.5f)
+                        {
+                            timerEnd[2].text = "0" + Mathf.Round(timeStart).ToString();
+                        }
+                        if (timeStars >= 6)
+                        {
+                            SKIP[2].SetActive(true);
+                        }
+                        if (timeStars >= 7)
+                        {
+                            SKIP[3].SetActive(true);
+                        }
+                    
                 }
             }
         }

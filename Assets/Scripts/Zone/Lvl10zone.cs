@@ -6,7 +6,7 @@ public class Lvl10zone : MonoBehaviour
 {
     public Teacherlvl10 teacher;
     private SpriteRenderer spr;
-
+    public Number ns;
     private void Start()
     {
         spr = GetComponent<SpriteRenderer>();
@@ -16,11 +16,19 @@ public class Lvl10zone : MonoBehaviour
     {
         if (teacher.rotation == true)
         {
-            spr.enabled = true;
-        }
-        if (teacher.rotation == false)
-        {
-            spr.enabled = false;
-        }
+            if (ns.thasd != 1)
+            {
+                spr.enabled = true;
+            }
+            else
+            {
+                spr.enabled = false;
+            }
+
+        
+        }    if (teacher.rotation == false)
+            {
+                spr.enabled = false;
+            }
     }
 }

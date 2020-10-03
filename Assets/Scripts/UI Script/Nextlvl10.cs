@@ -50,7 +50,7 @@ public class Nextlvl10 : MonoBehaviour
         PlayerPrefs.Save();
         if (PlayerPrefs.GetInt("re") == 1)
         {
-            g = Random.Range(1, 10);
+            g = Random.Range(1, 12);
            
 
             if (SceneManager.GetActiveScene().buildIndex != g)
@@ -59,8 +59,9 @@ public class Nextlvl10 : MonoBehaviour
             }
             else
             {
-                SceneManager.LoadScene(10); LVL = true; LVL = false;
+                SceneManager.LoadScene(13); LVL = true; LVL = false;
             }
+     
         }
         else
         {

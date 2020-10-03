@@ -8,21 +8,21 @@ public class Y : Number
     public GameObject Particle;
     public Transform Object;
     public int EndStart;
-    public Number num;
+    public int Quaternio;
     private float counter;
     public Traektorialvl10 player;
     void Update()
     {
         counter += Time.deltaTime;
 
-        if (num.thasd == 1)
+        if (thasd == 1)
         {
             speed = 0;
 
         }
         if (speed == 0)
         {
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 90, 0), 1 * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, Quaternio, 0), 1 * Time.deltaTime);
         }
         if (player.zone == false)
         {

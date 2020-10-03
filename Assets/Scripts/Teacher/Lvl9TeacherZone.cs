@@ -16,6 +16,7 @@ public class Lvl9TeacherZone : MonoBehaviour
         if (player.zone == true)
         {
             walking.speed = 0;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, -90, 0), 1 * Time.deltaTime);
             _animator.SetTrigger("Teacher");
         }
     }

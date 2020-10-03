@@ -9,7 +9,7 @@ public class Traektoria : MonoBehaviour
     public int quantityclass, quantitypaper, Stars;
     public float SpeedRotate, sped, Power = 50 ;
     public AudioClip[] _audioClips;
-
+    public int clickbayt;
     [HideInInspector]  public float  Popadanieclass, click, counter, interval =1.5f , hitdist, intervalclick, timloosing, timloos ;
     
     public Transform PosRay,  BulletPos;
@@ -72,11 +72,11 @@ public class Traektoria : MonoBehaviour
                     }
 
                     if (click != quantitypaper && zone == false)
-                    {
+                    {  if (Input.GetMouseButtonDown(0))
+                        {
                     if (counter >= interval && intervalclick == 0)
                     {
-                        if (Input.GetMouseButtonDown(0))
-                        {
+                            clickbayt += 1; 
                             intervalclick = 1;
                             _box.enabled = true;
                             
@@ -133,7 +133,7 @@ public class Traektoria : MonoBehaviour
                         if (Popadanieclass == quantityclass)
                         {
                             _animator.SetTrigger("Victory");
-                            _audiosourse.Play();
+                            
 
                         }
                     }
@@ -147,7 +147,7 @@ public class Traektoria : MonoBehaviour
         if (other.gameObject.CompareTag("Zone"))
         {
             zone = true;
-            _audiosourse.PlayOneShot(_audioClips[2]);
+            _animator.SetTrigger("Proigriw");
         }
     }
 

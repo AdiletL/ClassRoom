@@ -13,7 +13,7 @@ public class TrajectoryRendererlvl10 : MonoBehaviour
    [HideInInspector] public RaycastHit hit;
     private Vector3 direction;
     public float plas;
-    public Vector3 sd;
+
     void Start()
     {
         
@@ -54,7 +54,7 @@ public class TrajectoryRendererlvl10 : MonoBehaviour
                 }
                 else
                 {
-                    plas =lineRendererComponent.GetPosition(0).x;
+                   
                     lineRendererComponent.positionCount += 1;
                     lineRendererComponent.SetPosition(lineRendererComponent.positionCount - 1, ray.origin + ray.direction);
 

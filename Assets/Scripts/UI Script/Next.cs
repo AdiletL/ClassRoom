@@ -52,20 +52,18 @@ public class Next : MonoBehaviour
        
         if (PlayerPrefs.GetInt("re") == 1)
         {
-          
-                g = Random.Range(1, 10);
-               
-                
-                if (SceneManager.GetActiveScene().buildIndex != g)
-                {
-                   SceneManager.LoadScene(g); LVL = true; LVL = false;
-                }
-                else 
-                {
-                    SceneManager.LoadScene(10); LVL = true; LVL = false;
-                }
-              
-          
+
+            g = Random.Range(1, 12);
+           
+
+            if (SceneManager.GetActiveScene().buildIndex != g)
+            {
+                SceneManager.LoadScene(g); LVL = true; LVL = false;
+            }
+            else
+            {
+                SceneManager.LoadScene(13); LVL = true; LVL = false;
+            }
         }
         else
         {
