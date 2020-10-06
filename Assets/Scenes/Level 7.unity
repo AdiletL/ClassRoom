@@ -1587,8 +1587,8 @@ MonoBehaviour:
   Bdist: 2.6
   dist: 0
   ForwardRight: 1
-  unterval: 5
-  EndStart: 6
+  unterval: 4
+  EndStart: 7
   B: {fileID: 1293197078}
 --- !u!65 &252003669
 BoxCollider:
@@ -8185,7 +8185,6 @@ MonoBehaviour:
   reflections: 1
   maxLenght: 100
   plas: 0
-  sd: {x: 0, y: 0, z: 0}
 --- !u!1 &1354838833
 GameObject:
   m_ObjectHideFlags: 0

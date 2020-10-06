@@ -38,7 +38,11 @@ public class NewBehaviourScript : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (pr == 2)
+        if (_rigidbody.useGravity == true)
+        {
+            power = 0;
+        }
+        if (pr >= 3)
         {
             power = 0;
             _rigidbody.useGravity = true;
@@ -56,7 +60,7 @@ public class NewBehaviourScript : MonoBehaviour
             
             if (dist >=plwsPlus)
             {
-                plus=  plus * dist * 2 + plus*3+plus*8;
+                plus=  plus * dist * 2 + plus*3+plus*7;
             }
             if (dist <= plwMinus)
             {
