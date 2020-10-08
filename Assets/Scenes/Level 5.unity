@@ -12794,13 +12794,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2037496295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8db406f81719de4aa5c0309c97a3683, type: 3}
+  m_Script: {fileID: 11500000, guid: 974b975b29e96dd419f37fdb0b536a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2054046791028511393}
-  spr: {fileID: 0}
-  _number: {fileID: 1139573171}
-  pl: {fileID: 2054046791028511393}
   num: {fileID: 1139573171}
 --- !u!212 &2037496298
 SpriteRenderer:
@@ -23473,23 +23469,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4522024723085000576
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4522024723085000577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8db406f81719de4aa5c0309c97a3683, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 2054046791028511393}
-  spr: {fileID: 0}
-  _number: {fileID: 8332508360610447225}
-  pl: {fileID: 2054046791028511393}
-  num: {fileID: 8332508360610447225}
 --- !u!1 &4522024723085000577
 GameObject:
   m_ObjectHideFlags: 0
@@ -23502,7 +23481,7 @@ GameObject:
   - component: {fileID: 4522024723085000588}
   - component: {fileID: 4522024723085000589}
   - component: {fileID: 4522024723085000586}
-  - component: {fileID: 4522024723085000576}
+  - component: {fileID: 4522024723085000578}
   m_Layer: 0
   m_Name: wachzone
   m_TagString: Zone
@@ -23510,6 +23489,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &4522024723085000578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4522024723085000577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 974b975b29e96dd419f37fdb0b536a86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  num: {fileID: 8332508360610447225}
 --- !u!54 &4522024723085000586
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -3228,7 +3228,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.38, z: 0.37}
-  m_Center: {x: 0, y: 0.63, z: 0.23}
+  m_Center: {x: 0, y: 0.63, z: 0.22}
 --- !u!95 &391749086
 Animator:
   serializedVersion: 3
@@ -11137,8 +11137,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.38, z: 0.4}
-  m_Center: {x: 0, y: 0.63, z: 0.23}
+  m_Size: {x: 0.19, y: 0.38, z: 0.37}
+  m_Center: {x: 0, y: 0.63, z: 0.22}
 --- !u!137 &1333018692
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
@@ -12763,14 +12763,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1602473739}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90026107d718f3f498b6409f526fcc3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 974b975b29e96dd419f37fdb0b536a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1035709263296904442}
-  spr: {fileID: 0}
-  numer: {fileID: 391749083}
-  pl: {fileID: 1035709263296904442}
-  numeration: {fileID: 391749083}
+  num: {fileID: 391749083}
 --- !u!54 &1602473742
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -37452,14 +37448,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 7269487842142858332}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90026107d718f3f498b6409f526fcc3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 974b975b29e96dd419f37fdb0b536a86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1035709263296904442}
-  spr: {fileID: 0}
-  numer: {fileID: 7269487842570474507}
-  pl: {fileID: 1035709263296904442}
-  numeration: {fileID: 7269487842570474507}
+  num: {fileID: 7269487842570474507}
 --- !u!4 &7269487842209966110
 Transform:
   m_ObjectHideFlags: 0
@@ -37790,7 +37782,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.19, y: 0.38, z: 0.4}
+  m_Size: {x: 0.19, y: 0.38, z: 0.37}
   m_Center: {x: 0, y: 0.63, z: 0.23}
 --- !u!114 &7269487842318811253
 MonoBehaviour:
@@ -40333,7 +40325,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.19, y: 0.38, z: 0.28}
-  m_Center: {x: 0, y: 0.63, z: 0.23}
+  m_Center: {x: 0, y: 0.63, z: 0.225}
 --- !u!95 &8296172668433744423
 Animator:
   serializedVersion: 3

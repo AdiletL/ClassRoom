@@ -9,7 +9,7 @@ public class Nextlvl10 : MonoBehaviour
     
     public bool LVL = false;
     public int restar;
-    private float counter, interval = 1f;
+    private float counter, interval = 0.3f;
     public Randomlvl rand;
     private int lvl, g;
 
