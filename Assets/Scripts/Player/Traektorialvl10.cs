@@ -12,9 +12,10 @@ public class Traektorialvl10 : MonoBehaviour
     [HideInInspector] public float Popadanieclass, click, counter, interval = 1.5f, hitdist, intervalclick, timloosing, timloos;
 
     public Transform PosRay, BulletPos;
-    public GameObject Bullet;
+    public GameObject bullet;
     public TrajectoryRendererlvl10 Trajectory;
    
+
     public GameObject[] paper;
 
 
@@ -23,8 +24,8 @@ public class Traektorialvl10 : MonoBehaviour
     private AudioSource _audiosourse;
 
     [HideInInspector] public Vector3 speed, mousPos;
-    public Vector3 plusmouse;
-    [HideInInspector] public  bool zone = false, sdf = false;
+
+    [HideInInspector] public bool zone = false, sdf = false, att = false;
 
     private void Start()
     {
@@ -50,9 +51,9 @@ public class Traektorialvl10 : MonoBehaviour
 
             mousPos = targetPoint - transform.position;
 
-            if (Popadanieclass != quantityclass)
+            if (Popadanieclass != quantityclass )
             {
-                if (click == quantitypaper && intervalclick == 0)
+                if (click == quantitypaper && intervalclick == 0 || att == true)
                 {
                     timloosing += Time.deltaTime;
 
@@ -60,6 +61,7 @@ public class Traektorialvl10 : MonoBehaviour
                     {
                         if (Popadanieclass != quantityclass)
                         {
+                            Trajectory.lineRendererComponent.enabled = false;
                             _animator.SetTrigger("Proigriw");
                             timloos += 1;
                         }
@@ -71,7 +73,7 @@ public class Traektorialvl10 : MonoBehaviour
 
                 }
 
-                if (click != quantitypaper && zone == false)
+                if (click != quantitypaper && zone == false && att != true)
                 {if (Input.GetMouseButtonDown(0))
                         {
                     if (counter >= interval && intervalclick == 0)
@@ -125,10 +127,11 @@ public class Traektorialvl10 : MonoBehaviour
                 if (sdf == true)
                 {
                    
-                        if (Number._number == true)
+                        if (Number._number == true || Yellow._number == true)
                         {
                             Popadanieclass += 1;
                             Number._number = false;
+                        Yellow._number = false;
                             Debug.Log("Hit");
                             if (Popadanieclass == quantityclass)
                             {
@@ -148,15 +151,25 @@ public class Traektorialvl10 : MonoBehaviour
             zone = true;
             _animator.SetTrigger("Proigriw");
         }
+        if (other.gameObject.CompareTag("Attack"))
+        {
+            att = true;
+        }
     }
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Attack"))
+        {
+            att = true;
+        }
+    }
     public void Kidanie()
     {
         if (click < quantitypaper + 1)
         {
             _audiosourse.PlayOneShot(_audioClips[0]);
-            GameObject s = Instantiate(Bullet, BulletPos.position, transform.rotation);
-            s.GetComponent<Rigidbody>().AddForce(plusmouse+mousPos.normalized   * sped, ForceMode.Impulse);
+            GameObject s = Instantiate(bullet, BulletPos.position, transform.rotation);
+            s.GetComponent<Rigidbody>().AddForce(mousPos.normalized   * sped, ForceMode.Impulse);
         }
     }
 }

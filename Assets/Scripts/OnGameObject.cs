@@ -8,7 +8,7 @@ public class OnGameObject : MonoBehaviour
     public GameObject _off;
     private void Awake()
     {
-        if (PlayerPrefs.GetInt("re") == 1)
+        if (PlayerPrefs.GetInt("re") > 0)
         {
             _on.SetActive(true);
             _off.SetActive(false);

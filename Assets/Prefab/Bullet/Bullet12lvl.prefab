@@ -127,7 +127,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedBullet: 0
   power: 380
-  angle: 170
 --- !u!82 &-810845842447255791
 AudioSource:
   m_ObjectHideFlags: 0
@@ -138,7 +137,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d163fc810edfcca4bb096bd66e095519, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1bdfffb813d2ae242ad96c63324198b5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

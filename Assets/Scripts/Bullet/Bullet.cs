@@ -9,6 +9,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody _rigidbody;
     public float speedBullet, power;
     private float speed;
+   
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -50,4 +51,5 @@ public class Bullet : MonoBehaviour
             _rigidbody.useGravity = true;
         }
     }
+   
 }

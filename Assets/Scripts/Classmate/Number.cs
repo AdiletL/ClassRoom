@@ -6,6 +6,7 @@ public class Number : MonoBehaviour
 {
     [HideInInspector] public static bool _number = false;
     [HideInInspector] public  bool number = false;
+  
     public Animator _anim;
    public BoxCollider _Box;
     public int thasd = 0;

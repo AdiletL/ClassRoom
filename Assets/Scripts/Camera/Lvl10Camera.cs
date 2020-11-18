@@ -9,6 +9,7 @@ public class Lvl10Camera : MonoBehaviour
     public Traektorialvl10 player;
     public Nextlvl10[] nextlvl;
     public Lvl10Camera cameraanim;
+  
 
     bool timerminute = false;
 
@@ -33,9 +34,9 @@ public class Lvl10Camera : MonoBehaviour
     void Update()
     {
         countPaper = player.clickbayt;
-        if (player.Popadanieclass != player.quantityclass)
+        if (player.Popadanieclass != player.quantityclass )
         {
-            if (player.zone == false)
+            if (player.zone == false &&  player.att != true)
             {
                 if (countPaper < player.quantitypaper || player.intervalclick != 0)
                 {
@@ -116,7 +117,7 @@ public class Lvl10Camera : MonoBehaviour
                 }
             }
         }
-        if (countPaper == player.quantitypaper && player.intervalclick == 0)
+        if (countPaper == player.quantitypaper && player.intervalclick == 0 || player.att == true)
         {
            
                 if (timeStars >= 1)
@@ -125,7 +126,7 @@ public class Lvl10Camera : MonoBehaviour
                 
             }
         }
-        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
+        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true ||  player.att == true)
         {
             timeStars += Time.deltaTime;
             if (timeStars >= 5)

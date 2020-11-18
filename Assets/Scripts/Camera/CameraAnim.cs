@@ -9,6 +9,7 @@ public class CameraAnim : MonoBehaviour
     public Traektoria player;
     public Next[] nextlvl;
     public CameraAnim cameraanim;
+    
 
     [HideInInspector] public bool timerminute = false;
 
@@ -34,9 +35,9 @@ public class CameraAnim : MonoBehaviour
     {
         countPaper = player.clickbayt;
         
-        if (player.Popadanieclass != player.quantityclass)
+        if (player.Popadanieclass != player.quantityclass )
         {
-            if (player.zone == false)
+            if (player.zone == false &&  player.att != true)
             {
                 if (countPaper < player.quantitypaper || player.intervalclick != 0)
                 {
@@ -119,16 +120,14 @@ _animator[0].SetTrigger("CameraVictory");
                 }
             }
         }
-        if (countPaper == player.quantitypaper && player.intervalclick == 0)
+        if (countPaper == player.quantitypaper && player.intervalclick == 0 || player.att == true)
         {
-         
-                if (timeStars >= 1)
+            if (timeStars >= 1)
             {
-_animator[0].SetTrigger("CameraVictory");
-            
+             _animator[0].SetTrigger("CameraVictory");
             }
         }
-        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true)
+        if (player.click == player.quantitypaper && player.intervalclick == 0 || player.zone == true || player.att == true)
         {
             timeStars += Time.deltaTime;
             if (timeStars >= 5 )

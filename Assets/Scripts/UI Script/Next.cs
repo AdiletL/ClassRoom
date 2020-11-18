@@ -50,7 +50,7 @@ public class Next : MonoBehaviour
         PlayerPrefs.SetInt("true", 1);
         PlayerPrefs.Save();
        
-        if (PlayerPrefs.GetInt("re") == 1)
+        if (PlayerPrefs.GetInt("re") == 2)
         {
 
             g = Random.Range(1, 12);

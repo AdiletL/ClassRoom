@@ -15,6 +15,7 @@ TagManager:
   - Stena
   - Down
   - Cloused
+  - Attack
   layers:
   - Default
   - TransparentFX
