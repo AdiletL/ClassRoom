@@ -25,25 +25,92 @@ MonoBehaviour:
   UserMessagesSubmitted: 0
   UserMessagesFailed: 0
   CustomArea: 
-  gameKey: []
-  secretKey: []
-  Build: []
-  SelectedPlatformOrganization: []
-  SelectedPlatformStudio: []
-  SelectedPlatformGame: []
-  SelectedPlatformGameID: 
-  SelectedOrganization: 
-  SelectedStudio: 
-  SelectedGame: 
-  NewVersion: 
-  Changes: 
+  gameKey:
+  - 0c746a1036c41f330e619a2476a81874
+  secretKey:
+  - 7af08d68b29ef1ab30949ebd84e508e890e43acc
+  Build:
+  - 0.1
+  SelectedPlatformOrganization:
+  - 
+  SelectedPlatformStudio:
+  - 
+  SelectedPlatformGame:
+  - 
+  SelectedPlatformGameID: ffffffff
+  SelectedOrganization: 00000000
+  SelectedStudio: 00000000
+  SelectedGame: 00000000
+  NewVersion: 6.3.10
+  Changes: '6.3.10
+
+    - fix to mopub impression events, require min. mopub v5.14.0
+
+    -
+    REMEMBER to update to this version of the SDK if you use MoPub impression events
+    and you have min. v5.14.0 of MoPub SDK inatalled or else the SDK will not send
+    MoPub impression event for you any more
+
+
+    6.3.9
+
+    - fixed ironsource impression
+    event compile error
+
+
+    6.3.8
+
+    - removed memory info from automatic crash
+    reports
+
+    - updated sqlite lib
+
+
+    6.3.7
+
+    - corrected ad event annotation
+
+
+    6.3.6
+
+    -
+    updated validator for impression events (android, ios)
+
+
+    6.3.5
+
+    - fixed
+    user log in function in editor for unity 2017
+
+
+    6.3.4
+
+    - fixed null exception
+    happening some times on desktop platforms (mac, linux, windows)
+
+
+    6.3.3
+
+    -
+    updated impression events
+
+
+    6.3.2
+
+    - fixed www build errors on unity
+    2017
+
+
+    6.3.1
+
+    - improved user identifer flow for ios (ios)'
   SignUpOpen: 1
-  StudioName: 
-  GameName: 
+  StudioName: MadAliens
+  GameName: ClassMates
   OrganizationName: 
   OrganizationIdentifier: 
   EmailGA: 
-  IntroScreen: 1
+  IntroScreen: 0
   InfoLogEditor: 1
   InfoLogBuild: 1
   VerboseLogBuild: 0
@@ -57,20 +124,20 @@ MonoBehaviour:
   ResourceItemTypes: []
   ResourceCurrencies: []
   LastCreatedGamePlatform: 0
-  Platforms: 
-  CurrentInspectorState: 0
+  Platforms: 08000000
+  CurrentInspectorState: 1
   ClosedHints: 
   DisplayHints: 0
   DisplayHintsScrollState: {x: 0, y: 0}
-  Logo: {fileID: 0}
-  UpdateIcon: {fileID: 0}
-  InfoIcon: {fileID: 0}
-  DeleteIcon: {fileID: 0}
-  GameIcon: {fileID: 0}
-  HomeIcon: {fileID: 0}
-  InstrumentIcon: {fileID: 0}
-  QuestionIcon: {fileID: 0}
-  UserIcon: {fileID: 0}
+  Logo: {fileID: 2800000, guid: 98df8f9c5678a4e5d964caa1244e8958, type: 3}
+  UpdateIcon: {fileID: 2800000, guid: 810bbb19deed24f3cb7b854f9bafde26, type: 3}
+  InfoIcon: {fileID: 2800000, guid: 1b4dd779aadd54ac88856975af0d3c0a, type: 3}
+  DeleteIcon: {fileID: 2800000, guid: 85a626f1668244d30a4e9f616991a793, type: 3}
+  GameIcon: {fileID: 2800000, guid: a9ac7103fc40b4e00923bf8c2cb5d30f, type: 3}
+  HomeIcon: {fileID: 2800000, guid: fe7e2ecc9b2fe447bafe90f6395d4709, type: 3}
+  InstrumentIcon: {fileID: 2800000, guid: 2ba470b4dffd848c6b267c34770cc63e, type: 3}
+  QuestionIcon: {fileID: 2800000, guid: f8ea67e311b0c4b2ea05718e90fd3b5b, type: 3}
+  UserIcon: {fileID: 2800000, guid: f49ef75333ff247cfb5dad4dab0d4dac, type: 3}
   AmazonIcon: {fileID: 0}
   GooglePlayIcon: {fileID: 0}
   iosIcon: {fileID: 0}
@@ -84,7 +151,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 
+  PlatformFoldOut: 01
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0

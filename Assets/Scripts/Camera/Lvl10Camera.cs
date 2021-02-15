@@ -29,7 +29,11 @@ public class Lvl10Camera : MonoBehaviour
         minute.text = 0 + ":".ToString();
         paperGaming.text = countPaper.ToString();
         timerGaming.text = timeStart.ToString();
-        _animator[_animator.Length] = GetComponent<Animator>();
+        for (int i = 0; i < _animator.Length; i++)
+        {
+       _animator[i] = GetComponent<Animator>();
+        }
+        
     }
     void Update()
     {
